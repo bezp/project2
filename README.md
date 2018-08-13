@@ -20,6 +20,6 @@ write the description of your project here. it should be about 5-6 lines or sent
 ## Team Members
 
 + Bezalel Pan
-+ Daniel McGeough Jr
++ Daniel McGeough Jr.
 + Raul Ramirez
 + Christopher Jackson
