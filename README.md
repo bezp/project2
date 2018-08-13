@@ -1,10 +1,10 @@
-#project 2
+#Beckoned Path
 
-## about
+## About
 
 write the description of your project here. it should be about 5-6 lines or sentences.
 
-## technologies
+## Technologies
 
 + .Net Core
 + Entity Framework Core
@@ -17,11 +17,9 @@ write the description of your project here. it should be about 5-6 lines or sent
 + NLog
 + (additional libraries/tools)
 
-## team members
+## Team Members
 
-+ name
-+ name
-+ name
-+ name 
-
-
++ Bezalel Pan
++ Daniel Morgan McGeough
++ Raul Ramirez
++ Christopher Jackson
