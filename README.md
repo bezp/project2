@@ -2,7 +2,7 @@
 
 ## About
 
-write the description of your project here. it should be about 5-6 lines or sentences.
+write the description of your project here. it should be about 5-6 lines or sentences..
 
 ## Technologies
 
