@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace BeckonedPath.Data.Models
 {
@@ -10,12 +11,20 @@ namespace BeckonedPath.Data.Models
         public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
+
+        public IConfiguration Configuration { get; set; }
+
+        public Project2Context() //IConfiguration configuration
+        {
+            var builder = new ConfigurationBuilder();
+            Configuration = builder.AddJsonFile(@"appsettings.dev.json").Build();
+            //Configuration = configuration;
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"");
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("ConnectionString"));
             }
         }
 
