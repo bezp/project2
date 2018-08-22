@@ -14,17 +14,21 @@ namespace BeckonedPath.Data.Models
 
         public IConfiguration Configuration { get; set; }
 
-        public Project2Context() //IConfiguration configuration
+        public Project2Context(DbContextOptions<Project2Context> options) : base(options) //IConfiguration configuration
         {
-            var builder = new ConfigurationBuilder();
-            Configuration = builder.AddJsonFile(@"appsettings.dev.json").Build();
-            //Configuration = configuration;
+            //var builder = new ConfigurationBuilder();
+            //Configuration = builder.AddJsonFile(@"appsettingsssss.json").Build();
         }
+
+        public Project2Context()
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("ConnectionString"));
+
             }
         }
 

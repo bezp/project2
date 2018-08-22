@@ -5,12 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="Views\Query\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BeckonedPath.Data\BeckonedPath.Data.csproj" />
+    <ProjectReference Include="..\BeckonedPath.Library\BeckonedPath.Library.csproj" />
   </ItemGroup>
 
 </Project>
