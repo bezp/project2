@@ -1,5 +1,7 @@
 ﻿using BeckonedPath.Data.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,28 +18,26 @@ namespace BeckonedPath.Service.Controllers
             _context = context;
         }
 
-        //DataHelper dataHelper = new DataHelper();
-
-
-        //public List<Users> GetUsers()
-        //{
-        //    return dataHelper.GetUsers();
-        //}
 
         public IActionResult Index()
         {
-            var asd = _context.Users.ToList();//.GetUsers();
-            //var asd = dataHelper.GetUsers();
 
-            ViewBag.x = asd;
 
-            //ViewBag.PageTitle = userViewModel.PageTitle;
-            //ViewBag.asd = userViewModel;
+            var userList = _context.Users//.ToList();
+                .Include(u => u.Events)
+                .ToList();
+            ViewBag.xuserList = userList;
 
-            ////var user = from u in _db.Users
-            ////               select u;
-            //var x = _db.Users.FirstOrDefault();
-            //ViewBag.DBStuff = x;
+
+
+            var userJson = JsonConvert.SerializeObject(userList, Formatting.Indented,
+            new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+
+            ViewBag.userJson = userJson;
+
 
             return View();
         }

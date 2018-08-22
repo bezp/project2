@@ -10,8 +10,7 @@ namespace BeckonedPath.Data.Models
     {
         //public DataHelper()
         //{ }
-        public DataHelper()
-        { }
+
         private readonly Project2Context _context;
 
         public DataHelper(Project2Context context)
