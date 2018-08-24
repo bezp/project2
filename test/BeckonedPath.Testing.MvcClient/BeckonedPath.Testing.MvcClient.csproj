@@ -13,4 +13,10 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="BeckonedPath.MvcClient">
+      <HintPath>..\..\src\BeckonedPath.MvcClient\bin\Debug\netcoreapp2.0\BeckonedPath.MvcClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
