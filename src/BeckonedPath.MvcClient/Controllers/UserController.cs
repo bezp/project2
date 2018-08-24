@@ -68,7 +68,7 @@ namespace BeckonedPath.MvcClient.Controllers
                 var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync("http://localhost:50322/api/user/create/", content);
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("/index");
             }
             catch (Exception)
             {

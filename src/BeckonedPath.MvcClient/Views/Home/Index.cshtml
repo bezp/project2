@@ -1,14 +1,42 @@
-﻿Beckoned Path
-Main Page in mvcClient
+﻿
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Description
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.listOfEvents)
+        {
+            <tr>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @item.Location
+                </td>
+                <td>
+                    @item.EventDate
+                </td>
+                <td>
+                    <a asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-set up links/structure in layout for
--main page w/ events (one by one)
--specific event page (w/ comments)
--specific user pages (ability to update/delete)
--all users w/ ability to create
-<br />
-<br />
 
+@*~~~~~~~~~~~~~~~~
 @foreach (var item in ViewBag.listOfEvents)
 {
     <li>@item.Description</li>
@@ -16,4 +44,4 @@ set up links/structure in layout for
     <li>@item.EventDate</li>
 
     <a asp-controller="/Event" asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
-}
+}*@

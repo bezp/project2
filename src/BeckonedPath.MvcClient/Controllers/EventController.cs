@@ -21,6 +21,9 @@ namespace BeckonedPath.MvcClient.Controllers
             if (result.IsSuccessStatusCode)
             {
                 var listOfEvents = JsonConvert.DeserializeObject<List<Events>>(result.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+
+                ViewBag.eComments = new List<EventComments>();
+
                 ViewBag.listOfEvents = listOfEvents;
                 return View();
             }
@@ -46,6 +49,16 @@ namespace BeckonedPath.MvcClient.Controllers
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
+
+                    var eventId = listOfEvents[0].EventId;
+                    var eCommentsString = client.GetAsync($"http://localhost:50322/api/eventcomments/eventcomments/{eventId}").GetAwaiter().GetResult();
+                    var listOfEComments = JsonConvert.DeserializeObject<List<EventComments>>(eCommentsString.Content.ReadAsStringAsync().GetAwaiter().GetResult(),
+                       new JsonSerializerSettings
+                       {
+                           ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                       });
+                    ViewBag.eComments = listOfEComments;
+
                     ViewBag.listOfEvents = listOfEvents;
                     return View();
                 }

@@ -1,5 +1,44 @@
-﻿listOfEvents~~~~~~~
-@ViewBag.listOfEvents
+﻿
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Description
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.listOfEvents)
+        {
+            <tr>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @item.Location
+                </td>
+                <td>
+                    @item.EventDate
+                </td>
+                <td>
+                    <a asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@*~~~~~~~~~~~~~`
+
 
 
 @foreach (var item in ViewBag.listOfEvents)
@@ -9,4 +48,20 @@
     <li>@item.EventDate</li>
 
     <a asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
+}*@
+
+@if (ViewBag.eComments != null)
+{
+
+    @foreach (var item in ViewBag.eComments)
+    {
+        <li>@item.Description</li>
+        <li>@item.UserId</li>
+    }
+
 }
+else
+{
+    
+}
+
