@@ -8,7 +8,6 @@ namespace BeckonedPath.Data.Interfaces
 {
     public interface IUsersRepo
     {
-
         IEnumerable<Users> ListAll();
         IQueryable<Users> GetOne<T>(int? id);
         void Add(Users users);

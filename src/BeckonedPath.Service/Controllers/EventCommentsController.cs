@@ -25,7 +25,6 @@ namespace BeckonedPath.Service.Controllers
             if (id > 0)
             {
                 return Ok(_eventCommentsRepo.GetAllForEvent<EventComments>(id));
-                //return Ok(_eventCommentsRepo.GetOne<EventComments>(id));
             }
             else
             {

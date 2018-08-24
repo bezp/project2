@@ -44,19 +44,12 @@ namespace BeckonedPath.Service.Controllers
         {
             Task.WaitAny();
             var x = new StreamReader(Request.Body).ReadToEnd();
-            //Console.WriteLine(x);
-            //Console.WriteLine(x);
-            //Console.WriteLine(x);
-            //Console.WriteLine(x);
-            //Console.WriteLine(x);
+
             var eventToAdd = JsonConvert.DeserializeObject<Events>(x);
             Task.WaitAny();
 
             _eventsRepo.Add(eventToAdd);
         }
-
-
-
 
     }
 }

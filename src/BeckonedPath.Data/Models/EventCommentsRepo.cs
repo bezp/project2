@@ -23,7 +23,6 @@ namespace BeckonedPath.Data.Models
         {
             return _db.EventComments.Where(ec => ec.EventId == id)
                 .AsQueryable();
-            //throw new NotImplementedException();
         }
 
         public IQueryable<EventComments> GetOne<T>(int? id)
@@ -34,7 +33,6 @@ namespace BeckonedPath.Data.Models
         public IEnumerable<EventComments> ListAll()
         {
             return _db.EventComments.ToList();
-            //throw new NotImplementedException();
         }
     }
 }

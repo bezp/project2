@@ -21,9 +21,9 @@ namespace BeckonedPath.Service
 
         public Startup(IConfiguration configuration)
         {
-            //Configuration = configuration;
             var builder = new ConfigurationBuilder();
-            Configuration = builder.AddJsonFile(@"C:\Revature\project-two\src\BeckonedPath.Service\appsettings.dev.json").Build();
+            var currentDirPath = Directory.GetCurrentDirectory();
+            Configuration = builder.AddJsonFile(Path.Combine(currentDirPath, "appsettings.dev.json")).Build();
         }
 
 
@@ -48,29 +48,12 @@ namespace BeckonedPath.Service
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            //var builder = new ConfigurationBuilder();
-            //Configuration = builder.AddJsonFile(@"appsettings.json").Build();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseMvc();
             app.UseMvc();
-            //    routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-
-
-            //app.Run(async (context) =>
-            //{
-
-            //    await context.Response.WriteAsync("hello work");
-            //});
 
 
         }

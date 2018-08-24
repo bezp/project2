@@ -1,6 +1,4 @@
-﻿listOfEvents~~~~~~~
-@ViewBag.listOfEvents
-
+﻿
 
 @foreach (var item in ViewBag.listOfEvents)
 {
@@ -9,4 +7,13 @@
     <li>@item.EventDate</li>
 
     <a asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
+}
+
+<p>~Comments~</p>
+
+@foreach (var item in ViewBag.eComments)
+{
+    <li>@item.Description</li>
+    <li>@item.UserId</li>
+
 }

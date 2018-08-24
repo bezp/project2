@@ -20,7 +20,6 @@ namespace BeckonedPath.Data.Models
         {
             _db.Events.Add(events);
             _db.SaveChanges();
-            //throw new NotImplementedException();
         }
 
         public IQueryable<Events> GetOne<T>(int? id)
@@ -29,14 +28,11 @@ namespace BeckonedPath.Data.Models
                 .Where(e => e.EventId == id);
 
             return eventAndComments;
-                //_db.Events.Where(e => e.EventId == id);
-            //throw new NotImplementedException();
         }
 
         public IEnumerable<Events> ListAll()
         {
             return _db.Events.AsEnumerable();
-            //throw new NotImplementedException();
         }
     }
 }
