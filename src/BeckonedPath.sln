@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeckonedPath.Service", "Bec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeckonedPath.Library", "BeckonedPath.Library\BeckonedPath.Library.csproj", "{148055A6-6E65-4E49-A5EA-50C864F751D8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{067A3233-84B2-406D-819C-4525748A069E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,18 @@ Global
 		{148055A6-6E65-4E49-A5EA-50C864F751D8}.Release|x64.Build.0 = Release|Any CPU
 		{148055A6-6E65-4E49-A5EA-50C864F751D8}.Release|x86.ActiveCfg = Release|Any CPU
 		{148055A6-6E65-4E49-A5EA-50C864F751D8}.Release|x86.Build.0 = Release|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Debug|x64.Build.0 = Debug|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Debug|x86.Build.0 = Debug|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Release|x64.ActiveCfg = Release|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Release|x64.Build.0 = Release|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Release|x86.ActiveCfg = Release|Any CPU
+		{067A3233-84B2-406D-819C-4525748A069E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

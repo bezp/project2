@@ -1,0 +1,22 @@
+﻿
+
+
+<p>@ViewBag.xuserList</p>
+<br />
+<br /> <p>this is json???</p>
+<p>@ViewBag.userJson</p>
+<br />
+<br /> <p>this is json end ------ </p>
+@foreach (var item in ViewBag.xuserList)
+{
+    <li>@item.FirstMidName</li>
+}
+
+@foreach (var item in ViewBag.xuserList)
+{
+    <li>--- @item.EventComments</li>
+
+}
+
+<div>show the related entities</div>
+ 
