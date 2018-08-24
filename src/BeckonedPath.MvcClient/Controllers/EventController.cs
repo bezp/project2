@@ -23,7 +23,7 @@ namespace BeckonedPath.MvcClient.Controllers
                 var listOfEvents = JsonConvert.DeserializeObject<List<Events>>(result.Content.ReadAsStringAsync().GetAwaiter().GetResult());
 
                 ViewBag.eComments = new List<EventComments>();
-
+                ViewBag.HasId = 0;
                 ViewBag.listOfEvents = listOfEvents;
                 return View();
             }
@@ -58,7 +58,7 @@ namespace BeckonedPath.MvcClient.Controllers
                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                        });
                     ViewBag.eComments = listOfEComments;
-
+                    ViewBag.HasId = id;
                     ViewBag.listOfEvents = listOfEvents;
                     return View();
                 }

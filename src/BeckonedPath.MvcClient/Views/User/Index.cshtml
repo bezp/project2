@@ -1,12 +1,51 @@
 ﻿
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.wot)
+        {
+        <tr>
+            <td>
+                @item.FirstMidName
+            </td>
+            <td>
+                @item.LastName
+            </td>
 
-<br />
-<a asp-controller="user/create">Create a new user</a>
-<br />
+            @if (ViewBag.wotId != null)
+            {
 
-@foreach (var item in ViewBag.wot)
+                <td>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a asp-action="/index" asp-route-id="@item.UserId">View Info</a>
+
+                </td>
+            }
+
+
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+@*@foreach (var item in ViewBag.wot)
 {
     <li>@item.FirstMidName</li>
     <li>@item.LastName</li>
     <a asp-action="/index" asp-route-id="@item.UserId">View Info</a>
-}
+}*@

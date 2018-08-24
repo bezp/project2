@@ -41,6 +41,7 @@ namespace BeckonedPath.MvcClient.Controllers
             {
                 var lis = JsonConvert.DeserializeObject<List<Users>>(result.Content.ReadAsStringAsync().GetAwaiter().GetResult());
                 ViewBag.wot = lis;
+                ViewBag.wotId = id;
                 return View();
             }
             else
