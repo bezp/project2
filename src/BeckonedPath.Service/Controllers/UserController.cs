@@ -1,8 +1,10 @@
 ﻿using BeckonedPath.Data.Interfaces;
 using BeckonedPath.Data.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,11 +22,12 @@ namespace BeckonedPath.Service.Controllers
             _usersRepo = usersRepo;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Indexx()
         {
-            var characters = _usersRepo.ListAll();
-            ViewBag.x = characters;
-            return View();
+            //var characters = _usersRepo.ListAll();
+            //ViewBag.x = characters;
+            return Ok(_usersRepo.ListAll());
             //return View();
         }
 
@@ -39,6 +42,25 @@ namespace BeckonedPath.Service.Controllers
             {
                 return Ok(_usersRepo.ListAll());
             }
+        }
+
+        [HttpPost]
+        public void Create()
+        {
+            Task.WaitAny();
+            var x = new StreamReader(Request.Body).ReadToEnd();
+            var userToAdd = JsonConvert.DeserializeObject<Users>(x);
+            Task.WaitAny();
+
+            //Console.WriteLine(Request);
+            //Console.WriteLine(Request.Body);
+            //Console.WriteLine(new StreamReader(Request.Body).ReadToEnd().GetType());
+            //Console.WriteLine(x);
+            //Console.WriteLine(userToAdd.FirstMidName);
+            _usersRepo.Add(userToAdd);
+
+
+
         }
 
     }

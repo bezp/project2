@@ -20,7 +20,9 @@ namespace BeckonedPath.Data.Models
 
         public void Add(Users users)
         {
-            throw new NotImplementedException();
+            _db.Users.Add(users);
+            _db.SaveChanges();
+            //throw new NotImplementedException();
         }
 
         public void Delete(Users users)

@@ -14,21 +14,21 @@ namespace BeckonedPath.MvcClient.Controllers
         public IActionResult Index()
         {
 
-            var client = new HttpClient();
-            var result = client.GetAsync("http://localhost:50322/api/home/users").GetAwaiter().GetResult();
+            //var client = new HttpClient();
+            //var result = client.GetAsync("http://localhost:50322/api/home/users").GetAwaiter().GetResult();
 
-            if (result.IsSuccessStatusCode)
-            {
-                var lis = JsonConvert.DeserializeObject(result.Content.ReadAsStringAsync().GetAwaiter().GetResult());
-                ViewBag.wot = lis;
-                return View();
-            } else
-            {
-                ViewBag.wot = "asd";
-                return View();
-            }
+            //if (result.IsSuccessStatusCode)
+            //{
+            //    var lis = JsonConvert.DeserializeObject(result.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+            //    ViewBag.wot = lis;
+            //    return View();
+            //} else
+            //{
+            //    ViewBag.wot = "asd";
+            //    return View();
+            //}
 
-
+            return View();
         }
 
 

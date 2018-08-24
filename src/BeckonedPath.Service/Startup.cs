@@ -35,6 +35,7 @@ namespace BeckonedPath.Service
             services.AddDbContext<Project2Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            
             //framework services
             services.AddMvc();
 
