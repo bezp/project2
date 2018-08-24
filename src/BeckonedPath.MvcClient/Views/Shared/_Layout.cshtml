@@ -3,13 +3,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Beckoned Path</title>
 </head>
 <body>
     <nav>
-        <a asp-controller="/home" asp-action="/">Home</a>
-        <a asp-controller="/event" asp-action="/create">Create Event</a>
+        <a asp-controller="/event" asp-action="/index">Main Events</a>
         <a asp-controller="/user" asp-action="/index">User Profiles</a>
+
+        <a asp-controller="/event" asp-action="/create">Create Event</a>
+        <a asp-controller="/user" asp-action="/create">Create User</a>
 
         <br /><br />
     </nav>
