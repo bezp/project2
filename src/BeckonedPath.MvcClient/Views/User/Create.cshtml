@@ -1,0 +1,20 @@
+﻿@model BeckonedPath.MvcClient.Models.Users
+create page in mvcclient
+
+
+
+<form method="post">
+
+    <div>
+        <label asp-for="@Model.FirstMidName" class="control-label"></label>
+        <input asp-for="@Model.FirstMidName" class="form-control" />
+        <span asp-validation-for="@Model.FirstMidName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.LastName" class="control-label"></label>
+        <input asp-for="@Model.LastName" class="form-control" />
+        <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Create</button>
+</form>

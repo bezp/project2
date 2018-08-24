@@ -1,0 +1,11 @@
+﻿
+<br />
+<a asp-controller="user/create">Create a new user</a>
+<br />
+
+@foreach (var item in ViewBag.wot)
+{
+    <li>@item.FirstMidName</li>
+    <li>@item.LastName</li>
+    <a asp-action="/index" asp-route-id="@item.UserId">View Info</a>
+}

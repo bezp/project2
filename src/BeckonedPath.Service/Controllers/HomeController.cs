@@ -52,11 +52,6 @@ namespace BeckonedPath.Service.Controllers
                 return Ok(_context.Users.ToList());
             }
         }
-        //[HttpGet("{id:int}")]//
-        //public IActionResult Users(int id)
-        //{
-        //    return Ok(_context.Users.Where(u=> u.UserId == id));
-        //}
 
         [HttpGet("{id:int?}")]
         public IActionResult Events(int? id)
@@ -82,8 +77,8 @@ namespace BeckonedPath.Service.Controllers
             {
                 return Ok(_context.EventComments.ToList());
             }
-            //return Ok(_context.EventComments.ToList());
         }
+
 
     }
 }

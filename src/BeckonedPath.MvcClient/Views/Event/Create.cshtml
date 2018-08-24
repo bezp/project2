@@ -1,0 +1,28 @@
+﻿@model BeckonedPath.MvcClient.Models.Events
+
+<form method="post">
+
+    <div>
+        <label asp-for="@Model.Description" class="control-label"></label>
+        <input asp-for="@Model.Description" class="form-control" />
+        <span asp-validation-for="@Model.Description" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.Location" class="control-label"></label>
+        <input asp-for="@Model.Location" class="form-control" />
+        <span asp-validation-for="@Model.Location" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.EventDate" class="control-label"></label>
+        <input asp-for="@Model.EventDate" class="form-control" />
+        <span asp-validation-for="@Model.EventDate" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="@Model.UserId" class="control-label"></label>
+        <input asp-for="@Model.UserId" class="form-control" />
+        <span asp-validation-for="@Model.UserId" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Create</button>
+</form>

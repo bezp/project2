@@ -6,6 +6,14 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <nav>
+        <a asp-controller="/home" asp-action="/">Home</a>
+        <a asp-controller="/event" asp-action="/create">Create Event</a>
+        <a asp-controller="/user" asp-action="/index">User Profiles</a>
+
+        <br /><br />
+    </nav>
+
     <div>
         @RenderBody()
     </div>

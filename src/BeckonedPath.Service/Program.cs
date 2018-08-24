@@ -15,17 +15,13 @@ namespace BeckonedPath.Service
     {
         public static void Main(string[] args)
         {
-
-
             BuildWebHost(args).Run();
-
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("http://localhost:50322/")
                 .UseStartup<Startup>()
                 .Build();
-
-
     }
 }
