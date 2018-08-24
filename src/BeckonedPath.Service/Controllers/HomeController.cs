@@ -85,5 +85,10 @@ namespace BeckonedPath.Service.Controllers
             //return Ok(_context.EventComments.ToList());
         }
 
+        public IActionResult add2db()
+        {
+            //when they come to this page... save something into the db
+            return null;
+        }
     }
 }

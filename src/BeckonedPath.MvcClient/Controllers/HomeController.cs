@@ -13,12 +13,6 @@ namespace BeckonedPath.MvcClient.Controllers
     {
         public IActionResult Index()
         {
-            //HomeController homeController = new HomeController();
-
-            //var result = homeController.Index();
-
-            //var list = JsonConvert.DeserializeObject(result);
-            //ViewBag.wot = list; 
 
             var client = new HttpClient();
             var result = client.GetAsync("http://localhost:50322/api/home/users").GetAwaiter().GetResult();
@@ -36,5 +30,7 @@ namespace BeckonedPath.MvcClient.Controllers
 
 
         }
+
+
     }
 }
