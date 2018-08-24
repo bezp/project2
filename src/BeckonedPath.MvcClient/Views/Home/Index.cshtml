@@ -1,3 +1,19 @@
-﻿asdsdf
+﻿Beckoned Path
+Main Page in mvcClient
 
-@ViewBag.wot
+set up links/structure in layout for
+-main page w/ events (one by one)
+-specific event page (w/ comments)
+-specific user pages (ability to update/delete)
+-all users w/ ability to create
+<br />
+<br />
+
+@foreach (var item in ViewBag.listOfEvents)
+{
+    <li>@item.Description</li>
+    <li>@item.Location</li>
+    <li>@item.EventDate</li>
+
+    <a asp-controller="/Event" asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
+}

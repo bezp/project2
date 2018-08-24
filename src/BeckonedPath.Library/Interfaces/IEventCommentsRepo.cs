@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BeckonedPath.Data.Interfaces
+namespace BeckonedPath.Library.Interfaces
 {
-    public interface IEventComments
+    public interface IEventCommentsRepo
     {
     }
 }
