@@ -1,14 +1,14 @@
 ﻿user index in mvcClient
 
-@*@ViewBag.wot
+User page
 
-<p>!!!!!!!!!!!!</p>
+<br />
+<a asp-controller="user/create">Create a new user</a>
+<br />
 
-@*
-    @ViewBag.wot2*@
-
-
-@*@foreach (var item in ViewBag.wot)
-    {
-        <li>@item.FirstMidName</li>
-    }*@*@
+@foreach (var item in ViewBag.wot)
+{
+    <li>@item.FirstMidName</li>
+    <li>@item.LastName</li>
+    <a asp-action="/index" asp-route-id="@item.UserId">View Info</a>
+}

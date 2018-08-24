@@ -1,4 +1,5 @@
-﻿using BeckonedPath.Service.Controllers;
+﻿using BeckonedPath.Data.Models;
+using BeckonedPath.Service.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -13,22 +14,20 @@ namespace BeckonedPath.MvcClient.Controllers
     {
         public IActionResult Index()
         {
+            var client = new HttpClient();
+            var result = client.GetAsync("http://localhost:50322/api/event/events/").GetAwaiter().GetResult();
 
-            //var client = new HttpClient();
-            //var result = client.GetAsync("http://localhost:50322/api/home/users").GetAwaiter().GetResult();
-
-            //if (result.IsSuccessStatusCode)
-            //{
-            //    var lis = JsonConvert.DeserializeObject(result.Content.ReadAsStringAsync().GetAwaiter().GetResult());
-            //    ViewBag.wot = lis;
-            //    return View();
-            //} else
-            //{
-            //    ViewBag.wot = "asd";
-            //    return View();
-            //}
-
-            return View();
+            if (result.IsSuccessStatusCode)
+            {
+                var listOfEvents = JsonConvert.DeserializeObject<List<Events>>(result.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                ViewBag.listOfEvents = listOfEvents;
+                return View();
+            }
+            else
+            {
+                ViewBag.listOfEvents = "Sorry it did not work";
+                return View();
+            }
         }
 
 

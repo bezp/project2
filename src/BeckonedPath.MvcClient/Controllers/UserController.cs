@@ -63,12 +63,6 @@ namespace BeckonedPath.MvcClient.Controllers
         {
             try
             {
-                ViewBag.o = user;
-                //_context.Add(course);
-                //await _context.SaveChangesAsync();
-                //return RedirectToAction(nameof(Index));
-                //return Redirect("https://www.google.com/");
-                //return Redirect("https://www.google.com/");
                 var client = new HttpClient();
                 var jsonString = JsonConvert.SerializeObject(user);
                 var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
@@ -81,28 +75,6 @@ namespace BeckonedPath.MvcClient.Controllers
 
                 throw;
             }
-            //if (ModelState.IsValid)
-            //{
-            //    ViewBag.o = user;
-            //    //_context.Add(course);
-            //    //await _context.SaveChangesAsync();
-            //    //return RedirectToAction(nameof(Index));
-            //    //return Redirect("https://www.google.com/");
-            //    //return Redirect("https://www.google.com/");
-            //    var client = new HttpClient();
-            //    var jsonString = JsonConvert.SerializeObject(user);
-            //    var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            //    return client.PostAsync("http://localhost:50322/api/user/create/", content);
-            //    //return RedirectToRoute("http://localhost:50322/api/user/create/");
-            //    //return View(,);
-            //} else
-            //{
-            //    //return Redirect("http://localhost:51322");
-                
-            //    //return Redirect("https://www.google.com/");
-            //    //return View();
-            //}
-
             
         }
 

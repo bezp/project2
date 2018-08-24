@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BeckonedPath.Service.Views.Home
+namespace BeckonedPath.MvcClient.Views.Event
 {
     public class IndexModel : PageModel
     {

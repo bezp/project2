@@ -12,32 +12,30 @@ namespace BeckonedPath.Service.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]/[action]")]
-    public class UserController : Controller
+    public class EventController : Controller
     {
-
-        private readonly IUsersRepo _usersRepo;
-
-        public UserController(IUsersRepo usersRepo)
+        private readonly IEventsRepo _eventsRepo;
+        public EventController(IEventsRepo eventsRepo)
         {
-            _usersRepo = usersRepo;
+            _eventsRepo = eventsRepo;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(_usersRepo.ListAll());
+            return Ok(_eventsRepo.ListAll());
         }
 
         [HttpGet("{id:int?}")]
-        public IActionResult Users(int? id)
+        public IActionResult Events(int? id)
         {
             if (id > 0)
             {
-                return Ok(_usersRepo.GetOne<Users>(id));
+                return Ok(_eventsRepo.GetOne<Events>(id));
             }
             else
             {
-                return Ok(_usersRepo.ListAll());
+                return Ok(_eventsRepo.ListAll());
             }
         }
 
@@ -46,19 +44,19 @@ namespace BeckonedPath.Service.Controllers
         {
             Task.WaitAny();
             var x = new StreamReader(Request.Body).ReadToEnd();
-            var userToAdd = JsonConvert.DeserializeObject<Users>(x);
+            //Console.WriteLine(x);
+            //Console.WriteLine(x);
+            //Console.WriteLine(x);
+            //Console.WriteLine(x);
+            //Console.WriteLine(x);
+            var eventToAdd = JsonConvert.DeserializeObject<Events>(x);
             Task.WaitAny();
 
-            //Console.WriteLine(Request);
-            //Console.WriteLine(Request.Body);
-            //Console.WriteLine(new StreamReader(Request.Body).ReadToEnd().GetType());
-            //Console.WriteLine(x);
-            //Console.WriteLine(userToAdd.FirstMidName);
-            _usersRepo.Add(userToAdd);
-
-
-
+            _eventsRepo.Add(eventToAdd);
         }
+
+
+
 
     }
 }

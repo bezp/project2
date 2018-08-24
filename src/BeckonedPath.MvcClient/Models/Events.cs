@@ -15,7 +15,6 @@ namespace BeckonedPath.MvcClient.Models
         public string Location { get; set; }
         [Required]
         public DateTime EventDate { get; set; }
-        [Required]
         public int UserId { get; set; }
 
         public Users User { get; set; }

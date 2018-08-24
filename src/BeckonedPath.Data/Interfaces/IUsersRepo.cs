@@ -12,6 +12,7 @@ namespace BeckonedPath.Data.Interfaces
         IEnumerable<Users> ListAll();
         IQueryable<Users> GetOne<T>(int? id);
         void Add(Users users);
+
         void Delete(Users users);
         void Update(Users users);
     }
