@@ -1,19 +1,114 @@
 ﻿
 
-@foreach (var item in ViewBag.listOfEvents)
-{
-    <li>@item.Description</li>
-    <li>@item.Location</li>
-    <li>@item.EventDate</li>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Description
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.listOfEvents)
+        {
+            <tr>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @item.Location
+                </td>
+                <td>
+                    @item.EventDate
+                </td>
 
-    <a asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
+
+
+                @if (ViewBag.wotId != null)
+                {
+
+                    <td></td>
+                }
+                else
+                {
+                    <td>
+                        <a asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
+                    </td>
+                }
+
+
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+<br /><br /><br />
+
+@*~~~~~~~~~~~~~`
+
+
+
+    @foreach (var item in ViewBag.listOfEvents)
+    {
+        <li>@item.Description</li>
+        <li>@item.Location</li>
+        <li>@item.EventDate</li>
+
+        <a asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
+    }*@
+
+@if (ViewBag.HasId > 0)
+{
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    UserId
+                </th>
+                <th></th>
+                <th>
+                    Comment
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.eComments)
+            {
+                <tr>
+                    <td>
+                        @item.UserId
+                    </td>
+                    <td></td>
+                    <td>
+                        @item.Description
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @*@foreach (var item in ViewBag.eComments)
+        {
+            <li>@item.Description</li>
+            <li>@item.UserId</li>
+        }*@
+
+}
+else
+{
+
 }
 
-<p>~Comments~</p>
 
-@foreach (var item in ViewBag.eComments)
-{
-    <li>@item.Description</li>
-    <li>@item.UserId</li>
-
-}

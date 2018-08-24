@@ -41,6 +41,7 @@ namespace BeckonedPath.MvcClient.Controllers
             {
                 var lis = JsonConvert.DeserializeObject<List<Users>>(result.Content.ReadAsStringAsync().GetAwaiter().GetResult());
                 ViewBag.wot = lis;
+                ViewBag.wotId = id;
                 return View();
             }
             else
@@ -68,7 +69,7 @@ namespace BeckonedPath.MvcClient.Controllers
                 var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync("http://localhost:50322/api/user/create/", content);
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("/index");
             }
             catch (Exception)
             {
