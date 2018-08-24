@@ -42,6 +42,7 @@ namespace BeckonedPath.Service
             //register application services
             services.AddScoped<IUsersRepo, UsersRepo>();
             services.AddScoped<IEventsRepo, EventsRepo>();
+            services.AddScoped<IEventCommentsRepo, EventCommentsRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

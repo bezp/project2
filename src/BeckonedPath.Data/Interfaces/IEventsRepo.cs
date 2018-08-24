@@ -13,5 +13,6 @@ namespace BeckonedPath.Data.Interfaces
         IQueryable<Events> GetOne<T>(int? id);
         void Add(Events events);
 
+
     }
 }
