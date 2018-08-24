@@ -49,15 +49,7 @@ namespace BeckonedPath.Service.Controllers
             var userToAdd = JsonConvert.DeserializeObject<Users>(x);
             Task.WaitAny();
 
-            //Console.WriteLine(Request);
-            //Console.WriteLine(Request.Body);
-            //Console.WriteLine(new StreamReader(Request.Body).ReadToEnd().GetType());
-            //Console.WriteLine(x);
-            //Console.WriteLine(userToAdd.FirstMidName);
             _usersRepo.Add(userToAdd);
-
-
-
         }
 
     }

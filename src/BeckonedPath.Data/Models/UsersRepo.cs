@@ -22,7 +22,6 @@ namespace BeckonedPath.Data.Models
         {
             _db.Users.Add(users);
             _db.SaveChanges();
-            //throw new NotImplementedException();
         }
 
         public void Delete(Users users)
@@ -33,7 +32,6 @@ namespace BeckonedPath.Data.Models
         public IQueryable<Users> GetOne<T>(int? id)
         {
             return _db.Users.Where(u => u.UserId == id);
-            //throw new NotImplementedException();
         }
 
         public IEnumerable<Users> ListAll()

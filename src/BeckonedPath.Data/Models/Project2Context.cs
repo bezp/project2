@@ -16,8 +16,7 @@ namespace BeckonedPath.Data.Models
 
         public Project2Context(DbContextOptions<Project2Context> options) : base(options) //IConfiguration configuration
         {
-            //var builder = new ConfigurationBuilder();
-            //Configuration = builder.AddJsonFile(@"appsettingsssss.json").Build();
+
         }
 
         public Project2Context()

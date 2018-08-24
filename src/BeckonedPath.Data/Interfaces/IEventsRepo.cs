@@ -12,7 +12,5 @@ namespace BeckonedPath.Data.Interfaces
         IEnumerable<Events> ListAll();
         IQueryable<Events> GetOne<T>(int? id);
         void Add(Events events);
-
-
     }
 }

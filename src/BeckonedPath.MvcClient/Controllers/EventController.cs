@@ -38,7 +38,7 @@ namespace BeckonedPath.MvcClient.Controllers
             try
             {
                 var result = client.GetAsync($"http://localhost:50322/api/event/events/{id}").GetAwaiter().GetResult();
-                Task.WaitAll();
+                //Task.WaitAll();
                 if (result.IsSuccessStatusCode)
                 {
                     var listOfEvents = JsonConvert.DeserializeObject<List<Events>>(result.Content.ReadAsStringAsync().GetAwaiter().GetResult(),
@@ -46,6 +46,17 @@ namespace BeckonedPath.MvcClient.Controllers
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
+                    var eventId = listOfEvents[0].EventId;
+                    var eCommentsString = client.GetAsync($"http://localhost:50322/api/eventcomments/eventcomments/{eventId}").GetAwaiter().GetResult();
+
+                    var listOfEComments = JsonConvert.DeserializeObject<List<EventComments>>(eCommentsString.Content.ReadAsStringAsync().GetAwaiter().GetResult(),
+                        new JsonSerializerSettings
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        });
+
+                    ViewBag.eComments = listOfEComments;
+
                     ViewBag.listOfEvents = listOfEvents;
                     return View();
                 }
@@ -60,10 +71,6 @@ namespace BeckonedPath.MvcClient.Controllers
 
                 throw;
             }
-            //ViewBag.async = result;
-            //return View();
-
-
         }
 
         [HttpGet]
