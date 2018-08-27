@@ -35,13 +35,3 @@
     </tbody>
 </table>
 
-
-@*~~~~~~~~~~~~~~~~
-@foreach (var item in ViewBag.listOfEvents)
-{
-    <li>@item.Description</li>
-    <li>@item.Location</li>
-    <li>@item.EventDate</li>
-
-    <a asp-controller="/Event" asp-action="/Index" asp-route-id="@item.EventId">View Event Info</a>
-}*@

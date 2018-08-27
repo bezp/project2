@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace BeckonedPath.MvcClient.Controllers
 {
+
     [Route("[controller]/[action]")]
     public class EventController : Controller
     {
