@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace BeckonedPath.MvcClient.Controllers
 {
+
     public class HomeController : Controller
     {
         public IActionResult Index()

@@ -1,57 +1,52 @@
-﻿//using BeckonedPath.Data.Models;
-//using System;
-//using System.Collections.Generic;
-//using System.Text;
-//using Xunit;
+﻿using beckonedpath.data.models;
+using system;
+using system.collections.generic;
+using system.text;
+using xunit;
 
-//namespace BeckonedPath.Testing.Data
-//{
-//    public class ContextTest
-//    {
-//        private MockProject2Context _sut = new MockProject2Context();
-//        private Project2Context _sut2 = new Project2Context();
+namespace beckonedpath.testing.data
+{
+    public class ContextTest
+    {
+        private mockproject2context _sut = new mockproject2context();
+        private project2context _sut2 = new project2context();
+        private events _sut3 = new events();
 
-//        private Events _sut3 = new Events();
+        private eventcomments _sut4 = new eventcomments();
 
-//        private EventComments _sut4 = new EventComments();
+        [Fact]
+        public void event_verify_mock()
+        {
+            _sut.saveevents(_sut3);
+            assert.equal(_sut3, _sut.readevents(_sut3.eventid));
+        }
 
-//        [Fact]
-//        public void Event_Verify_Mock()
-//        {
-//            _sut.SaveEvents(_sut3);
-//            Assert.Equal(_sut3, _sut.ReadEvents(_sut3.EventId));
-//        }
+        [Fact]
+        public void comment_verify_mock()
+        {
+            _sut.savecomments(_sut4);
+            assert.equal(_sut4, _sut.readcomments(_sut4.eventcommentid));
+        }
 
-//        [Fact]
-//        public void Comment_Verify_Mock()
-//        {
-//            _sut.SaveComments(_sut4);
-//            Assert.Equal(_sut4, _sut.ReadComments(_sut4.EventCommentId));
-//        }
-
-//        [Fact]
-//        public void Event_Verify_SQL()
-//        {
-//            _sut3 = new Events()
-//            {
-//                EventComments = new List<EventComments>(),
-//                Description = "Party Rock",
-//                EventDate = Convert.ToDateTime("8/22/18"),
-//                Location = "Revature",
-//                User = new Users()
-//                {
-//                    FirstMidName = "Litty",
-//                    Events = new List<Events>(),
-//                    EventComments = new List<EventComments>(),
-//                    LastName = "Warren",
-
-//                }
-//            };
-
-
-//            _sut2.SaveEvents(_sut3);
-//            Assert.Equal(_sut3, _sut2.ReadEvents(_sut3.EventId));
-//        }
-
-//    }
-//}
+        [Fact]
+        public void event_verify_sql()
+        {
+            _sut3 = new events()
+            {
+                eventcomments = new list<eventcomments>(),
+                description = "party rock",
+                eventdate = convert.todatetime("8/22/18"),
+                location = "revature",
+                user = new users()
+                {
+                    firstmidname = "litty",
+                    events = new list<events>(),
+                    eventcomments = new list<eventcomments>(),
+                    lastname = "warren"
+                }
+            };
+            _sut2.saveevents(_sut3);
+            assert.equal(_sut3, _sut2.readevents(_sut3.eventid));
+        }
+    }
+}
